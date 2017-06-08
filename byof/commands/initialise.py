@@ -15,6 +15,7 @@ class Initialise(Base):
                 os.makedirs(current_path+dir_name)
                 os.chdir(current_path+dir_name)
                 open("__init__.py","w")
+
             make_dir("/Test")
             make_dir("/Client")
             make_dir("/Report")
@@ -24,8 +25,8 @@ class Initialise(Base):
             print (colored('Building your folder structure .... ', 'magenta'))
             print (colored('Framework is created!', 'green'))
 
-        except OSError, e:
+        except OSError as e:
             if (e.errno == 17):
-                print(colored("fatal: Folders already exists and is not an empty directory.",'red'))
+                print(colored("Fatal: Folders already exists and is not an empty directory.",'red'))
 
 
